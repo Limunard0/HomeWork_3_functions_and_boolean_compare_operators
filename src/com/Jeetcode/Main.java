@@ -2,48 +2,40 @@ package com.Jeetcode;
 
 public class Main {
 
+
+    public static boolean isDivisible(int x, int y) {
+        if (x % y == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public static void printResult(int i, int a, int b, int c) {
+        if (isDivisible(i, a)) {
+            System.out.println(i + " je djeljiv sa " + a);
+        } else if (isDivisible(i, b)) {
+            System.out.println(i + " je djeljiv sa " + b);
+        } else if (isDivisible(i, c)) {
+            System.out.println(i + " je djeljiv sa " + c);
+        } else {
+            System.out.println(i + " nije djeljiv ");
+        }
+    }
+
+
+    public static void printRange(int start, int end, int a, int b, int c) {
+        for (int i = start; i <= end; i++) {
+            printResult(i, a, b, c);
+        }
+    }
+
+
     public static void main(String[] args) {
 
-
-        // x = broj od kojeg krece lista
-        // y = broj na kojem zavrsava lista
-
-        int x = 10;
-        int y = 20;
-
-        for (int i = x; i <= y; i++) {
-
-            // Brojevi sa kojima zelimo provjeriti djeljivost liste
-
-            int a = 3;
-            int b = 7;
-            int c = 11;
-
-
-            // Operacije koje provjeravaju djeljivost brojeva
-            boolean djeljiva = (i % a == 0);
-            boolean djeljivb = (i % b == 0);
-            boolean djeljivc = (i % c == 0);
-
-
-            if ( djeljiva == true) {
-                System.out.println(  "Broj je djeljiv sa " + a);
-            } else if (djeljivb == true) {
-                System.out.println("Broj je djeljiv sa " + b);
-            } else  if (djeljivc == true) {
-                System.out.println("Broj je djeljiv sa " + c);
-            } else System.out.println ("Broj nije djeljiv");
-        }
-
+        printRange(10, 20,
+                3, 7, 11);
 
     }
 }
-
-
-
-
-
-
-
-
-
